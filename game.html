@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/game.js"></script>
+	<script>
+		window.onload=function(){
+			var sence=document.getElementById('sence');
+			var btn=document.getElementById('btn');
+			var btn2=document.getElementById('btn2');
+			// console.log(sence)
+			var k=new game(sence);//调用
+			btn.onclick=function(){
+				k.play();
+				k.key();
+			}
+			btn2.onclick=function(){
+				k.stop();
+			}
+		}
+	</script>
+</head>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	body,html{
+		height: 100%;
+		overflow: hidden;
+	}
+	#sence{
+		width: 100%;
+		height: 100%;
+		background: url("./imgs/1.png") no-repeat center center;
+		background-size: cover;
+		margin: 0 auto;
+		position: relative;
+	}
+	#btn{
+		width: 155px;
+		height: 52px;
+		background: url("./imgs/11.png") no-repeat center center;
+		position: absolute;
+		right: 20px;
+		bottom: 80px;
+		z-index: 11;
+	}
+	#btn2{
+		width: 155px;
+		height: 52px;
+		background: url("./imgs/12.png") no-repeat center center;
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		z-index: 11;
+	}
+</style>
+<body>
+	<div id="btn"></div>
+	<div id="btn2"></div>
+	<div id="sence"></div>
+</body>
+</html>
